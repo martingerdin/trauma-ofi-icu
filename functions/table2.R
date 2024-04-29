@@ -5,8 +5,9 @@ tablereg <- ofi %>%
          ASApreinjury, Survival, OpportunityForImprovement1)
 
 tablereg$Intubation <- ifelse(is.na(tablereg$Intubation), "Unknown", table1$Intubation)
-tablereg$Intubation <- fct_relevel(tablereg$Intubation, "No intubation", "Intubation 1-7 days", "Intubation > 7 days", "Unknown")
-
+tablereg$Intubation <- fct_relevel(tablereg$Intubation, "No intubation", "Mechanical ventilation 1-7 days", "Mechanical ventilation > 7 days", "Unknown")
+tablereg$daysinICU <- fct_relevel(tablereg$daysinICU, "≤ 7 days", "> 7 days")
+tablereg$Survival <- fct_relevel(tablereg$Survival, "Dead", "Alive")
 
 # Unadjusted Table
 table3a <- tbl_uvregression(data = tablereg,
@@ -18,8 +19,9 @@ table3a <- tbl_uvregression(data = tablereg,
                               RTS = "Revised Trauma Score",
                               daysinICU = "Days in the ICU",
                               TimeFInt = "Time to first intervention",
+                              Intubation = "Mechanical ventilation",
                               ASApreinjury = "ASA preinjury",
-                              OnDuty = "On duty",
+                              OnDuty = "On call hours",
                               TimeFCT = "Time to first CT"
                             )) %>%
   bold_labels() %>%
@@ -35,6 +37,8 @@ table3b <- tbl_regression(adjusted_table,
                           exponentiate = TRUE, 
                           label = list(RTS = "Revised Trauma Score",
                                        daysinICU = "Days in the ICU",
+                                       Intubation = "Mechanical ventilation",
+                                       OnDuty = "On call hours",
                                        ASApreinjury = "ASA preinjury",
                                        TimeFCT = "Time to first CT")) %>%
   bold_labels() %>%

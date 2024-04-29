@@ -6,6 +6,8 @@ tablereg1 <- ofi_alive %>%
   select(Sex, Age, Intubation, RTS, ISS,TimeFCT, OnDuty, daysinICU, TimeFCT, 
          ASApreinjury, OpportunityForImprovement1)
 
+tablereg1$daysinICU <- fct_relevel(tablereg1$daysinICU, "≤ 7 days", "> 7 days")
+
 # Unadjusted Table
 table3aalive <- tbl_uvregression(data = tablereg1,
                             method = glm,
@@ -17,7 +19,8 @@ table3aalive <- tbl_uvregression(data = tablereg1,
                               daysinICU = "Days in the ICU",
                               TimeFInt = "Time to first intervention",
                               ASApreinjury = "ASA preinjury",
-                              OnDuty = "On duty",
+                              OnDuty = "On call hours",
+                              Intubation = "Mechanical ventilation",
                               TimeFCT = "Time to first CT"
                             )) %>%
   bold_labels() %>%
@@ -31,6 +34,8 @@ table3balive <- tbl_regression(adjusted_table1,
                           exponentiate = TRUE, 
                           label = list(RTS = "Revised Trauma Score",
                                        daysinICU = "Days in the ICU",
+                                       OnDuty = "On call hours",
+                                       Intubation = "Mechanical ventilation",
                                        ASApreinjury = "ASA preinjury",
                                        TimeFCT = "Time to first CT")) %>%
   bold_labels() %>%

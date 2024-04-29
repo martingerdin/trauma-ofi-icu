@@ -70,9 +70,9 @@ ofi$Intubation1 <- ifelse(ofi$pre_intubated == 1, "Intubation",
 
 #Intubation combined with ventilator days 
 ofi$Intubation <- ifelse(ofi$Intubation1 == "No intubation", "No intubation",
-                         ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days ==  0, "Intubation 1-3 days",
-                                ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days %in% 1:7, "Intubation 1-7 days",
-                                       ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days > 7, "Intubation > 7 days", 
+                         ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days ==  0, "Mechnical ventilation 1-7 days",
+                                ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days %in% 1:7, "Mechanical ventilation 1-7 days",
+                                       ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days > 7, "Mechanical ventilation > 7 days", 
                                               ifelse(ofi$Intubation1 == "Unknown", "Unknown", NA)))))
 
 #Respiratory rate 
@@ -185,14 +185,15 @@ table1$Intubation <- ifelse(is.na(table1$Intubation), "Unknown", table1$Intubati
 table1 <- na.omit(table1)
 
 table2 <- table1 %>%
-  mutate(Intubation = factor(Intubation, levels = c("No intubation", "Intubation 1-7 days", "Intubation > 7 days", "Unknown"))) %>%
+  mutate(Intubation = factor(Intubation, levels = c("No intubation", "Mechanical ventilation 1-7 days", "Mechanical ventilation > 7 days", "Unknown"))) %>%
   tbl_summary(by = OpportunityForImprovement,
               type = list(OnDuty ~ "dichotomous"),
               label = list(RTS = "Revised Trauma Score",
                            ISS = "Injury Severity Score",
+                           Intubation = "Mechanical ventilation",
                            TimeFCT = "Time to first CT", 
                            daysinICU = "Days in the ICU",
-                           OnDuty = "On duty",
+                           OnDuty = "On call hours",
                            ASApreinjury = "ASA preinjury"),
               statistic = list(
                 all_continuous() ~ "{mean} ({sd})",
@@ -204,7 +205,7 @@ table2 <- table1 %>%
   )  %>%
   modify_table_styling(
     columns = label,
-    rows = label == "On duty",
+    rows = label == "On call hours",
     footnote = "Arrival at the hospital on Saturday or Sunday, or arrival at the hospital before 8 am or after 5 pm"
   ) %>%
   bold_labels() %>% 
