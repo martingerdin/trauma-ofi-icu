@@ -3,6 +3,7 @@
 tablereg <- ofi %>% 
   select(Sex, Age, Intubation, RTS, ISS,TimeFCT, OnDuty, daysinICU, TimeFCT, 
          ASApreinjury, Survival, OpportunityForImprovement1)
+tablereg <- na.omit(tablereg)
 
 tablereg$Intubation <- ifelse(is.na(tablereg$Intubation), "Unknown", table1$Intubation)
 tablereg$Intubation <- fct_relevel(tablereg$Intubation, "No intubation", "Mechanical ventilation 1-7 days", "Mechanical ventilation > 7 days", "Unknown")

@@ -153,7 +153,7 @@ ofi$daysinICU <- ifelse(ofi$iva_dagar_n < 7 | ofi$iva_dagar_n == 7, "≤ 7 days"
 
 #Pt ASA preinjury
 ofi$ASApreinjury <- ifelse(ofi$pt_asa_preinjury == 1 | ofi$pt_asa_preinjury == 2, "ASA 1-2",
-                           ifelse(ofi$pt_asa_preinjury %in% 3:7, "ASA 3-7",
+                           ifelse(ofi$pt_asa_preinjury %in% 3:6, "ASA 3-6",
                                   ifelse(ofi$pt_asa_preinjury == 999, NA, NA)))
 
 #Survival after 30 days 
@@ -201,7 +201,7 @@ table2 <- table1 %>%
               ),
               missing = "ifany",
               missing_text = "Missing",
-              digits = all_continuous() ~ 2
+              digits = all_continuous() ~ 0
   )  %>%
   modify_table_styling(
     columns = label,

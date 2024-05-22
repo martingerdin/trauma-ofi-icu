@@ -1,6 +1,6 @@
 #TABLE 2: Adjusted and unadjusted logistic regression
 # Data Preparation
-ofi_alive <- subset(ofi, subset = (Survival == "Alive"))
+ofi_alive <- subset(tablereg, subset = (Survival == "Alive"))
 
 tablereg1 <- ofi_alive %>% 
   select(Sex, Age, Intubation, RTS, ISS,TimeFCT, OnDuty, daysinICU, TimeFCT, 
