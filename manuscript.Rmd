@@ -1,225 +1,300 @@
 ---
 title: "Opportunities for improvement in adult trauma patients admitted to the intensive care unit: A registry-based study"
-output: html_document
+output: "html_document"
 author: "Elin Sun Cao"
 bibliography: bibliography.bib
 csl: vancouver.csl
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Abstract
+## Förbättringsmöjligheter i vården av vuxna traumapatienter som vårdats på intensivvårdsavdelningen: En register-baserad studie
 
-Abstract
-========
+### Bakgrund
+Trauma är en ledande orsak till mortalitet och morbiditet i världen. En hörnsten i förbättringsprogram för trauma är multidisciplinära mortalitets- och morbiditetskonferenser. Syftet med dessa konferenser är att identifiera förbättringsmöjligheter (OFI). Många patienter med svårt trauma blir inlagda på intensivvårdsavdelningen (IVA). Trots detta är kännedomen om OFI hos denna patientgrupp begränsad.
 
-Background
-----------
-Trauma is a leading cause of mortality and morbidity worldwide. A cornerstone in developing the trauma quality improvement programs is multidisciplinary mortality and morbidity review to identify opportunities for improvement (OFI) in order to implement corrective actions.<!-- This sentence is a bit long, try to break it into two, or use active voice: Multidisciplinary mortality and morbidity review is a ... --> Many patients with severe trauma is admitted to the intensive care unit (ICU), but little is known about opportunities for improvement in this group of patients. The aim of this study is to characterise OFI in adult trauma patients admitted to the ICU and assess how patient factors are associated with OFI in these patients.
+### Syfte
+Karaktärisera OFI hos vuxna traumapatienter som vårdats på IVA och bedöma hur patient- och processfaktorer är associerade med OFI hos denna patientgrupp. 
 
-Methods
--------
-This was a registry-based study using all patients between 2014 and 2022 from the Karoliniska University Hospital in Solna who had been admitted to the ICU and who were reviewed regarding the presence of OFI by the mortality and morbidity conference. Bi-variable and multivariable logistic regression was used to assess the following patient and process factors and OFI among this group of patients: ...
+### Metod
+Detta är en registerbaserad studie som inkluderar traumapatienter mellan 2014–2023 som vårdats på Karolinska Universitetssjukhuset i Solna, varit inlagda på IVA och som har granskats avseende förekomsten av OFI vid en mortalitets- och morbiditetskonferens. Bivariabel och multivariabel logistisk regression användes för att bedöma sambandet mellan förekomsten av OFI och utvalda patient- och processfaktorer. 
 
-Results
--------
+### Resultat
+OFI identifierades hos 143 (9,9%) av 1449 patienter. Högre Revised Trauma Score (RTS) (OR 1.22; 95% CI 1.10, 1.36; p<0,001), > 7 dagar på intensivvårdsavdelningen (IVA) (OR 1.83; 95% CI 1.21, 2.75; p=0.004) och överlevnad 30 dagar efter sjukhusinläggning (OR 1.85; 95% CI 1.03, 3.50; p=0.049) var signifikant associerade med högre odds för OFI i multivariabla analyser.
 
-Conclusion
-----------
+### Slutsats
+Flera patient- och processfaktorer var associerade med ökade odds för OFI. Resultaten påvisade att det var de patienter som hade högre RTS - och därmed var mer stabila vid ankomst, samt patienter som varit inlagda längre tid på IVA och som överlevde 30 dagar efter sjukhusinläggning som hade högre odds för OFI.
+
+## Opportunities for improvement in adult trauma patients admitted to the intensive care unit: A registry-based study
+### Background
+Trauma is a leading cause of mortality and morbidity worldwide. A cornerstone in trauma quality improvement programs is multidisciplinary mortality and morbidity conferences. The purpose of these conferences is to identify opportunities for improvement (OFI). Many patients with severe trauma are admitted to the intensive care unit (ICU), but little is known about OFI in this group of patients. 
+
+### Aim
+Characterize OFI in adult trauma patients admitted to the ICU and assess how patient and process factors are associated with OFI in these patients.
+
+### Methods
+A registry-based study of trauma patients admitted to the ICU between 2014-2023 at the Karolinska University Hospital in Solna, Sweden, who were reviewed regarding the presence of OFI in a mortality and morbidity conference. Bivariable and multivariable logistic regression was used to determine associations between selected patient and process factors and OFI.
+
+### Results
+OFI was identified in 143 (9,9%) out of 1449 patients. RTS (OR 1.22; 95% CI 1.10, 1.36; p<0.001), > 7 days in the ICU (OR 1.83; 95% CI 1.21, 2.75; p=0.004) and survival 30 days after injury (OR 1.85; 95% CI 1.03, 3.50; p=0.049) were significantly associated with increased odds of OFI. 
+
+### Conclusion
+Several patient and process factors were found to be associated with OFI, indicating that patients with higher RTS scores - who were more stable upon arrival, patients with more days spent in the ICU, and patients who were alive 30 days after injury had higher odds of OFI.
+
+# Abbreviations
+
+ASA score = American Society of Anesthesiologists score
+CT = computed tomography
+GCS = Glasgow Coma Scale
+ISS = Injury Severity Score
+OFI = Opportunity For Improvement
+RR = respiratory rate
+RTS = Revised Trauma Score
+SBP = systolic blood pressure
+SweTrau = Swedish Trauma Registry
+TQIP = Trauma Quality Improvement Programs
 
 
+# Introduction
 
+Trauma — the clinical entity of injury and the body’s associated response — is a leading cause of mortality and morbidity worldwide [@60]. According to the Global Burden of Disease Study 2019, injury-related deaths constitute 7.6% of all deaths and take the lives of 4,3 million people yearly worldwide - more than HIV/AIDS, malaria, maternal mortality, and tuberculosis combined. The top three out of five causes of death in people aged 5-29 are injury-related: road traffic injuries, homicide, and suicide. Each year, tens of millions of people suffer non-fatal injuries leading to treatment at hospitals in emergency departments and acute care visits [@52, @1]. These injuries often lead to temporary or permanent disability and the need for physical and mental rehabilitation. Disability-adjusted life-years (DALYs) is a way to measure post-discharge quality of life and overall disease burden. Trauma accounts for one-tenth of DALYs, most of the burden in low- and middle-income countries [@6]. Trauma costs approximately 3% of gross domestic product yearly globally, as it mostly affects the working population [@7]. Trauma exposure at a young age increases the risk for mental illness and suicide leading to increased risk of an unhealthy lifestyle associated with smoking, alcohol and substance abuse, chronic disease, and cancer as well as societal problems such as crime, poverty, and violence [@1]. The burden of disease from trauma varies depending on certain conditions: socioeconomic factors, sex, age, and country. Trauma is more common in men compared to women. Across all age groups worldwide, road traffic injuries and suicide rank among the top three leading causes of injury for both genders. However, homicide is more prevalent among males, while falls are more common in females [@2]. 
 
-Introduction
-============
+In Sweden, the ongoing advancement of quality improvement systems places significant emphasis on addressing trauma [@61]. A cornerstone of this effort is the Swedish Trauma Registry (SweTrau), to which most hospitals across the country report data on trauma patients. SweTrau serves as a vital resource for continued research on trauma patients contributing to efforts to optimize trauma care nationwide. According to SweTrau, trauma is one of the leading causes of death among the working population in Sweden. Many patients survive but with severe sequelae. The leading causes of trauma in Sweden include road traffic injuries, falls, weapons, stabs, and blows. In the university hospitals of Sweden – among patients with severe trauma, 17% were deceased, 20% suffered severe disability, 49% suffered moderate disability and 14% recovered well [@3].
 
-<!-- The structure is generally good. I would add some more global data to the beginning, and then try to refer to more studies on potential opportunities for improvement and how they can be addressed. Try searching for preventable deaths in trauma patients treated in the ICU as well -->
+For all injuries, quality hospital care can reduce short- and long-term disability. Therefore, improving planning, access, and organization of trauma care systems involving prevention, pre-hospital care, intra-hospital care, rehabilitation as well as research and quality improvement, all play a central role in reducing the overall impact after trauma. [@1]
 
-Trauma is a leading cause of mortality and morbidity worldwide, and the leading cause of death among people under 44 years old in the United States and the fourth leading cause of death in the elderly<!-- Also in the US? I suggest you cite the latest Global Burden of Disease figures, see https://www.thelancet.com/pb-assets/Lancet/gbd/summaries/diseases/injuries.pdf--> [@Frydrych2019]<!-- Use more descriptive keys in bibliography.bib and use them like in this example, i.e. within square brackets and preceded by a @-->. A cornerstone in developing the trauma quality improvement programs is multidisciplinary mortality and morbidity review to identify opportunities for improvement (OFI) in order to implement corrective actions. OFIs provide guidance as to what to focus specific efforts on and is a way to assess trauma patient cases in a more objective manner rather than only subjective methods where individual cases are reviewed [2]. Examples of opportunities for improvement include lack of resources and management errors. 
+Trauma patients are often admitted to the ICU due to the severity of their injuries  and the subsequent physiological and anatomical sequelae. Prior research has focused on classifying errors in preventable trauma deaths, with clinical performance errors, often stemming from a lack of knowledge, being identified as the most common type, particularly in the emergency department [@62]. However, reporting of errors in trauma resuscitation varies between healthcare centers [@63]. As a results, there is a notable gap in research regarding error reporting practices in trauma care — especially for trauma patients admitted to the ICU [@12]. Understanding and addressing these gaps are essential for improving patient outcomes and optimizing trauma care protocols.
 
-Albaaj et al. recently analyzed OFI in relation to different patient and process factors based on data from the trauma registry of Karolinska Institutet Solna. The study indicated that patients with moderate to severe trauma are at the highest odds of OFI [3]. Many patients with severe trauma are admitted to the intensive care unit (ICU), but little is known about opportunities for improvement in this group of patients. 
+## Trauma quality improvement programs
 
-According to a study on the Korean trauma registry the primary cause of death after trauma was haemorrhage, followed by sepsis/multiorgan failure and central nervous system injury<!-- There are many studies on preventable deaths in trauma patients, so that's a good key word to search for -->. Delayed hemostatic procedures and transfusions were common areas for improvement in the hospital stage [4]. These are examples of factors that could be important in care on a higher hospital level such as the ICU. The aim of this study is to characterise OFI in adult trauma patients admitted to the ICU and assess how patient factors are associated with OFI in these patients.
+Trauma Quality Improvement Programs (TQIP) emerged in high-income countries to enhance the quality of in-hospital trauma care. Its implementation has contributed to significant improvements in the quality of care and outcomes [@47]. Among TQIP interventions, trauma registries along with mortality and morbidity conferences have been highlighted as key in-hospital TQIP interventions [@48]. In addition to these, audit filters is another intervention that is commonly a part of TQIP. All these interventions have become integral components of TQIP, facilitating ongoing improvements in trauma care [@49]. The purpose of multidisciplinary mortality and morbidity reviews is to discuss preventable deaths and identify OFIs in trauma care regarding structure as well as clinical processes. This way, identifying OFIs will guide us on what to focus specific efforts on. Mortality and morbidity reviews are a key method of addressing all necessary components of trauma improvement [@10]. Audit filters are descriptions of specific actions that should be taken, time frames in which tests or treatments should be provided, or outcomes that are expected to occur in injured patients. The purpose is to assess patients whose care falls outside the frames of these audit filters and provide feedback on how to correct errors and improve future trauma care on a systematic level. Audit filters are often used to select patients for mortality and morbidity conferences [@5]. 
 
-Methods 
-=======
-Study design
-------------
-We conducted single-centre registry-based retrospective cohort study using data from the trauma registry and trauma care quality database at Karolinska University Hospital in Solna. <!-- This can be removed as it should be covered in other sections: The trauma care quality database is a subset of the trauma registry and includes about 8000 patients selected for review between 2014 and 2022. The outcome of the selected patients was OFI identified by the multidisciplinary review board and then recorded in the trauma care quality database. From 2017 the trauma care quality database includes all patients in the trauma registry as well as the results of the mortality and morbidity review. This project will use these two databases and assess what types of OFI occurred in ICU patients and how different patient factors; such as age, sex, mechanism of injury and injury severity, are associated with OFI using logistic regression. A 5% significance level and 95% confidence levels will be used. -->
+Preventability in trauma is often defined in studies as an event that would not have occurred had the patient received ordinary standards of care, such as timely and accurate management of hypoxemia and hemorrhage during early patient management [@9]. The term “Opportunities for improvement” (OFI) is a term used by the World Health Organization (WHO) in their quality improvement guidelines, refers to preventable errors in care that have a direct adverse effect on patient outcomes or deviate from safe clinical practice. Quality improvement requires a feedback loop where patterns of the care of patients are analyzed consistently in an objective way. Utilizing OFIs serves as a means of identifying areas of improvement and further elevating the quality of care [@42]. 
 
-Setting
--------
-The Karolinska University Hospital in Solna is a level 1 trauma centre based on the definition by the American College of Surgeons (ACS) Committee on Trauma [5], and is designated to receive all patients in Stockholm with major or suspected major trauma. The hospital has direct access to radiology, surgery, emergency medicine, intensive care and consultants from relevant specialities [6]. All patients are included in a mortality and morbidity screening combining individual review and specific audit filters by specialized nurses. The patients who are identified as having higher probability for OFI are discussed in a multidisciplinary conference held every 6-8 weeks. Examples of OFI include the need for better organization or more senior members taking part in the trauma care. The presence or absence of OFI is decided among the participants of the conference and then recorded in the trauma care quality database. 
+Albaaj et al. recently analyzed OFI in relation to different patient and process factors based on a selection of data from SweTrau including the patients admitted to the Karolinska University Hospital Solna. The study indicated that patients with moderate to severe trauma are at the highest odds of OFI [@12]. 
 
-Participants
-------------
-The trauma registry includes all patients admitted with trauma team activation, regardless of Injury Severity Score (ISS), as well as patients admitted without trauma team activation but found to have an ISS of more than 9. We included all patients who had been included in the morbidity and mortality screening process between January 1, 2014 and *June 1, 2022 (?)* and who were also admitted to the ICU. *We excluded patients who were younger than 15 years and patients who were dead on arrival.*
+The paradigm of Donabedian states that implementing proven structures and processes of care is the most effective way to improve outcomes [@8]. Mortality and morbidity reviews as well as audit filters can be used as means of improving outcomes in line with the paradigm of Donabedian. Examples of structure and process interventions in the intensive care unit (ICU) are increased staff coverage and treatment bundles to recognize and treat common conditions such as bundles for sepsis and ventilator-associated pneumonia [@9]. 
 
-Variables and data sources/measurements
----------------------------------------
+## Preventability among trauma patients in the ICU
+
+In the evaluation of trauma patients, the primary focus is on conducting a rapid initial assessment, known as the primary survey, to identify and address any life-threatening injuries. This is typically followed by a more comprehensive secondary survey to thoroughly assess for additional injuries. However, the secondary survey may be overlooked during the initial evaluation in the emergency department, resulting in ICU personnel assuming responsibility for conducting this assessment, along with initiating early patient management. Early management of trauma patients has over time increasingly shifted to the ICU [@50]. The most common challenges in trauma patient management in the ICU are airway and ventilator management, hemorrhage, transfusions, and coagulopathy [@53]. 
+
+Challenges of airway management in ICU-admitted trauma patients involve harmful effects of mechanical ventilation, ventilator-associated pneumonia (VAP), and severe hypoxemia due to aspiration, pneumonia, acute respiratory distress syndrome, or pulmonary contusions. Mechanical ventilation can be managed with a lung-protective strategy to reduce risks of harmful effects, there are ventilator bundles to decrease the rate of VAP, and severe hypoxemia can be treated with strategies to improve oxygenation, such as airway pressure release ventilation, pulmonary vasodilators, or extracorporeal membrane oxygenation [@54, @55, @56, @57]. 
+
+Hemorrhage in trauma patients involves blood loss, tissue ischemia as well as inflammatory responses. An increase in lactate and base deficit or failure to normalize them, are linked to higher mortality rates. Managing hemorrhagic shock in trauma patients typically necessitates massive transfusions [@58]. 
+
+Assessing preventable deaths among ICU-admitted patients poses a significant challenge due to their complex medical backgrounds as well as the complexity and duration of the care, making it difficult to establish the standard of care for each individual. Moreover, despite receiving optimal treatment, these patients remain at elevated risk for complications and increased mortality rates [@9].
+
+There are many studies on OFI in relation to preventable deaths in trauma patients both regarding medical and human aspects. The primary medical causes of death after trauma are hemorrhage, sepsis/multiorgan failure, and central nervous system injury. Delayed hemostatic procedures and transfusions are common areas for improvement in the hospital stage [@13]. The most prominent OFI regarding hemorrhage was decision-making compared to errors in technical skill. The OFIs are frequently involved in the decision between radiology, surgery, and further investigation [@14].
+
+A study from The University of Pennsylvania looked at the human aspect of OFIs in the ICU. The ICU of this hospital uses telemedicine and telemonitoring to review critical patient events. The areas of improvement they identified were team dynamics and communication, use of best practices, increased and standardized access to emergency resources, and improvement of procedural technique [@15]. Another study looked at how critical information was handled in the ICU and found that laboratory values and test results were the most frequently lost items. This points to the importance of communication and handling of critical information at handoffs of care [@16].
+
+Many patients with severe trauma are admitted to the ICU, but little is known about OFI in this group of patients. This is due to the complexity of this cohort making identification of OFIs in this group more challenging. While numerous studies have explored various facets of trauma care enhancement, research specifically centered on OFIs in ICU-admitted trauma patients remains limited. 
+
+## Aim
+
+This study aims to characterize OFI in adult trauma patients admitted to the ICU and assess how patient and process factors are associated with OFI in these patients.
+
+# Methods
+
+## Study design
+
+We conducted a retrospective single-center cohort study based on data from the Karolinska University trauma registry, which is part of the Swedish Trauma registry (SweTrau), and the Karolinska trauma care quality database. 
+
+## Setting
+
+The Karolinska University Hospital in Solna is a level 1 equivalent trauma center designated to receive all severely injured patients in Stockholm [@17]. The hospital has direct access to radiology, surgery, emergency medicine, intensive care, and consultants from relevant specialties [@18]. All patients are included in a mortality and morbidity screening process, combining audit filters and an individual review by specialized nurses. Those identified as having a higher likelihood of OFI are discussed in a multidisciplinary conference held every 6-8 weeks. Examples of OFI include the need for improved organization or greater involvement of senior staff in trauma care. The presence or absence of OFI is decided among the participants of the conference and subsequently documented in the trauma care quality database.
+
+## Participants
+
+The trauma registry includes all patients admitted with trauma team activation, regardless of Injury Severity Score (ISS), as well as patients admitted without trauma team activation but found to have an ISS of more than 9. We included all patients who had been included in the morbidity and mortality screening process between January 1, 2014, and February 1, 2023, and who were also admitted to the ICU. We excluded patients who were younger than 15 years and patients who were dead on arrival. Patients under 15 years of age were not included in the study as they are included in other registries, and because the clinical approach for children varies from that of adults.
+
+## Variables and data sources/measurements
 
 ### Study outcome
 
-The study outcome will be on the presence of OFI in adult patients treated in the ICU focusing on different types of opportunities for improvement including delayed treatment, judgement error and technical errors. *vilka OFIs ska läggas till för att analyseras?*<!-- You can keep it like this for now -->
+The study’s outcome was the presence of OFI — defined as “Yes” for at least one identified OFI or “No” for no identified OFI — based on consensus reached during the mortality and morbidity conference.
 
-### Patient and process factors 
+### Patient and process factors
 
-The factors were chosen from the trauma registry, based on the locally used audit filters ?, *standard epidemiological factors* and factors registered in the Swedish National Trauma Registry. The categorical factors were *sex, survival after 30 days, Glasgow Coma Scale (GCS), respiratory rate, systolic blood pressure, working hours, weekend, time from arrival at the hospital until first computed tomography (CT) and if the patient was intubated*. The continuous factors age and Injury Severity Score (ISS) were also included. Working hours was defined as between 8.00 a.m. and 5 p.m., or during a weekend, defined as Saturday or Sunday.
+The variables selected for analysis were patient and process factors chosen from the trauma registry, based on the locally used audit filters, standard epidemiological factors, and factors registered in SweTrau. Categorical factors included sex, mechanical ventilation, on-call hours, ICU length of stay, ASA preinjury, and 30-day mortality. Sex was categorized as male sex or female sex. Mechanical ventilation was stratified into “No intubation”, “Mechanical ventilation 1-7 days”, “Mechanical ventilation > 7 days” and “Unknown”. On-call hours was defined as arrival to the hospital before 8.00 a.m., after 5 p.m., or during weekends – Saturday or Sunday. ICU length of stay was categorized as “≤ 7 days” or “> 7 days”. ASA preinjury was divided into “ASA 1-2” and “ASA 3-7”. 30-day mortality was determined based on whether the patient was deceased or alive 30 days after injury.
 
-Bias 
-----
-*senare*
+The continuous variables in the analysis were age, Revised Trauma Score (RTS), ISS, and time to first computed tomography (CT). RTS is a measure of severity based on prehospital or emergency department values. In instances where hospital values for systolic blood pressure (SBP), respiratory rate (RR), or Glasgow Come Scale (GCS) scores were missing from the emergency department records, prehospital values were used instead. If the patient was intubated, it was assumed that their GCS was 3 and RR was 0. Subsequently, for the RTS variable, each of the variables GCS, SBP, and RR were converted RTS codes ranging from 0 to 4 based on their respective values. RTS was then calculated using the formula for RTS: 0.9368 * GCS-code + 0.7326 SBP-code + 0.2908 RR-code to derive the RTS value.
 
-<!-- Describe any efforts to address potential sources of bias -->
+## Statistical methods
 
-Study size 
-----------
+When conducting logistic regression analysis, the number of events per variable (EPV) equal to 10 is a rule of thumb. If the EPV falls below this threshold, the results for regression analyses should be interpreted with caution [@45]. Keeping this guideline in mind, we selected independent variables for the analysis. To achieve this, we converted RTS, ISS, and time to first CT into continuous variables, while categorical variables were recoded into as few levels as possible. 
 
-<!-- Read up on the sample size requirements of logistic regression. You will come across for example the 10 events per variable rule, which is sometimes used as a rule of thumb to decide the size of the model in comparison to available data. You can also read up on the concept of power. -->
+A complete case analysis was conducted after handling missing values for SBP, RR and GCS as described above. We presented sample characteristics using descriptive statistics — mean for continuous variables and prevalence for categorical variables. Pearson’s Chi-squared test was used to calculate p-values for categorical variables, while the Wilcoxon rank sum test was used for continuous variables. Continuous variables were compared based on their mean values and standard deviations, while categorical variables were assessed by the number of patients within each subgroup and the corresponding subgroup percentages. 
 
-*senare*
+Bivariable logistic regression was used to determine unadjusted associations and multivariable logistic regression to determine adjusted associations between patient and process factors and OFI. Odds ratios (OR) with associated 95% confidence intervals were used with a 5% significance level. For continuous variables, ORs were derived by evaluating each unitary step increment. A subgroup analysis of patients who were alive 30 days after the injury was conducted to reduce impact from death as a cause of the association between OFI and patient and process factors. All statistical analyses were conducted using R version 2023.06.1+524 [@19].
 
-<!-- Explain how the study size was arrived at -->
+## Ethical considerations
 
-Quantitative variables
-----------------------
-*senare*
+There are several ethical aspects to take into consideration regarding this study: voluntary participation, informed consent, anonymity, confidentiality, potential for harm, and results communication.
 
-<!-- Age, ISS, time from arrival to CT, systolic blood pressure, respiratory rate and GCS score can all be considered quantitative variables. Describe how they were handled in the analyses. -->
+All patients with trauma team activation or high ISS scores are automatically included in the database used for this study. However, severe trauma may not be information patients, or their families wish to be available, given that the collected data include sensitive details such as outcomes, type of trauma, and time of hospital arrival. Thus, the ethical principles of voluntary participation and informed consent must be considered. National databases collect data from all registered patients, with implied consent, which presents a drawback in terms of voluntary participation. However, patients have the opportunity to decline participation. 
 
-<!-- Explain how quantitative variables were handled in the
-analyses. If applicable, describe which groupings were chosen and why
--->
+To respect anonymity and confidentiality, statistical analysis was conducted on synthetic data before being applied to actual data from the trauma registry and the trauma care quality database. This measure protects personal numbers and associated information, potentially alleviating discomfort among patients and their families. 
 
-Statistical methods
--------------------
-We used R for all statistical analyses [länk]. A complete case analysis was conducted after handling missing values in systolic blood pressure, respiratory rate, and GCS score as described above. We present sample characteristics using descriptive statistics. The statistical analysis was first conducted on synthetic data and later implemented on the data collected from the trauma registry and the trauma care quality database <!-- This can be moved to the bias section -->. <!-- This is where you write about the logistic regression --> Odds ratios (OR) with associated 95% confidence intervals was used with a 5% significance level. 
+Since this is an observational study without interventions, there is no direct potential for harm to participants. As for results communication, research findings and compiled original data are publicly accessible. While individual participants may not directly benefit, such research significantly contributes to the advancement of hospital care in Sweden, enhancing efficiency and equity. Studies conducted using data from the Karolinska University Hospital in Solna aim to improve local trauma care systems, thereby benefiting society by reducing trauma mortality rates and enhancing overall patient safety.
+
+Based on these factors, it can be concluded that the benefits of the study outweigh the drawbacks. The study's advantages are the contribution to trauma system developments which long-term improves patient safety and equality, and the protection of the individual’s anonymity and confidentiality using synthetic data. The potential emotional harm from non-voluntary participation is acknowledged as a limitation. 
+
+The study was approved by the Swedish Ethical Review Authority, approval numbers 2023-02975-02, 2021-03531, 2021-02541.
 
 
-<!-- 
+# Results
 
-(a) Describe all statistical methods, including those used to control
-for confounding
+## Participants
+Figure 1. Flowchart describing the inclusion and exclusion criteria for the study
 
-(b) Describe any methods used to examine subgroups and interactions
-
-(c) Explain how missing data were addressed 
-
-(d) Cohort study: If applicable, explain how loss to follow-up was addressed 
-
-(e) Describe any sensitivity analyses
--->
-
-
-
-
-Results
-=======
-
-<!-- 
-
-Participants
-------------
-
-(a) Report numbers of individuals at each stage of study—eg numbers
-potentially eligible, examined for eligibility, confirmed eligible,
-included in the study, completing follow-up, and analysed
-
-(b) Give reasons for non-participation at each stage
-
-(c) Consider use of a flow diagram
-
-Descriptive data
-----------------
-
-(a) Give characteristics of study participants (eg demographic,
-clinical, social) and information on exposures and potential
-confounders
-
-(b) Indicate number of participants with missing data for each
-variable of interest
-
-(c) Cohort study — Summarise follow-up time (eg, average and total
-amount)
-
-Outcome data
-------------
-
-Cohort study — Report numbers of outcome events or summary measures
-over time
-
-Main results
-------------
-
-(a) Give unadjusted estimates and, if applicable, confounder-adjusted
-estimates and their precision (eg, 95% confidence interval). Make
-clear which confounders were adjusted for and why they were included
-
-(b) Report category boundaries when continuous variables were
-categorized
-
-(c) If relevant, consider translating estimates of relative risk into
-absolute risk for a meaningful time period
-
-Other analyses 
---------------
-
-Report other analyses done—eg analyses of subgroups and interactions,
-and sensitivity analyses 
--->
-
-
-
-```{r main, echo=FALSE}
-source("main.R") ## This "imports" the main script file of your project and run any code in it
+```{r, include=FALSE}
+source("functions/flowchart.R")
 ```
 
+```{r, echo=FALSE}
+for (i in 1:(length(vert) - 1)) {
+  connectGrob(vert[[i]], vert[[i + 1]], type = "vert") %>%
+    print
+}
+
+connectGrob(vert$eligible, excluded, type = "L")
+connectGrob(vert$included, excluded1, type = "L")
+
+vert
+excluded
+excluded1
+```
+
+The patient demographics of this study is presented in Figure 1. A total of 14,022 patients were included in the trauma registry and trauma care quality database between 2014 and 2023, out of which 12,278 patients were excluded. Out of all patients, 11,343 were excluded because they were not treated in the ICU, three patients were excluded because they were under 15 years old, six patients were excluded because they were dead on arrival, and 928 patients were excluded because they had not been screened regarding the presence of OFI. This left us with a total of 1,742 patients eligible for the study. Out of these, 293 patients were excluded because there was missing data in one or more of the dependent variables, leaving a total of 1,449 patients included in the study.
+
+## Descriptive data
+
+```{r include_scripts, include=FALSE}
+source("functions/table1.R")
+```
+
+```{r, echo=FALSE}
+table2
+```
+
+Table 1 present sample characteristics. Of all patients, males constituted 1,096 (76%) and females constituted 353 (24%) patients. There were 846 (58%) patients who were not intubated, 241 (17%) patients who received mechanical ventilation for 1-7 days, and 113 (7,8%) patients who received mechanical ventilation for more than 7 days. The number of patients who arrived outside working hours was 1,042 (72%). A total of 1,064 (73%) patients were equal to or less than 7 days in the ICU, and 385 (27%) patients were more than 7 days in the ICU. A total of 1,080 (75%) patients had an ASA score of 1-2 before arrival to the hospital, and 369 (25%) patients had an ASA score of 3-7 before arrival to the hospital. Amongst our patients, 30-day mortality was at 286 (20%).
+
+When comparing patients with OFI to those without, significant differences emerged across various factors. Specifically, individuals with OFI were less likely to require intubation, had higher RTS scores, experienced shorter time to initial CT scans, spent more days in the ICU, and demonstrated a greater likelihood of surviving 30 days post-injury.
+
+## Main results
+
+```{r, include=FALSE}
+source("functions/table2.R")
+```
+
+```{r, echo=FALSE}
+table3_merge
+```
+
+Table 2 shows the unadjusted and adjusted associations of the selected patient and process factors in relation to OFI. In the unadjusted analysis, the factors that were significantly associated with the presence of OFI were: Revised Trauma Score `r inline_text(table3a, variable = RTS)`, > 7 days in the ICU `r inline_text(table3a, variable = daysinICU, level = "> 7 days")` and survival 30 days after injury `r inline_text(table3a, variable = Survival, level = "Alive")`.
+
+In the adjusted analysis the following factors demonstrated significant association with increasing odds of OFI: Revised Trauma Score `r inline_text(table3b, variable = RTS)`, > 7 days in the ICU `r inline_text(table3b, variable = daysinICU, level = "> 7 days")` and survival 30 days after injury `r inline_text(table3b, variable = Survival, level = "Alive")`. 
+
+Sex, age, mechanical ventilation, ISS, time to first CT, on-call hours, and ASA preinjury were not significantly associated with OFI in the unadjusted nor the adjusted analyses.
+
+The same patient and process factors were significant in both analyses. The ORs increased for all three factors in the adjusted analysis compared to the unadjusted analysis. 
+
+```{r, include=FALSE}
+source("functions/table3.R")
+```
+
+```{r, echo=FALSE}
+table3alive_merge
+```
+
+Table 3 shows the unadjusted and adjusted associations of OFI and the selected patient and process factors among the patients who were alive 30 days after injury In the unadjusted analysis, time to first CT was significantly associated with OFI. However, the effect size was minimal and thus rounded to zero None of the other patient and process factors were significantly associated with OFI in the analyses. 
+
+# Discussion
+
+The aim of this study was to characterize OFI in adult trauma patients admitted to the ICU and assess how patient and process factors are associated with OFI in these patients. The key results from this study are that higher RTS, > 7 days length of stay in the ICU and survival 30 days after injury were significantly associated with higher odds of OFI. Age, sex, mechanical ventilation, ISS, time to first CT, arrival during on-call hours, and ASA preinjury were not significantly associated with OFI in either the adjusted or the unadjusted analyses. In the subgroup analysis of patients who were alive 30 days after injury, no patient or process factor was significantly associated with OFI in the adjusted analysis.
+
+Our study found a significant association between higher RTS scores and higher odds of OFI, meaning that among very severely injured patients that are admitted to the ICU, patients in a less severe condition were at higher odds of OFI. Patients with lower RTS scores are often in critical condition upon arrival — upon which emergency interventions are performed immediately. Conversely, patients with higher RTS scores, indicating relative stability upon arrival, may experience delayed interventions. This aligns with findings from previous research, where patients with relatively better vital parameter values, were significantly associated with increased odds of OFI in the unadjusted analysis, but not in the adjusted analysis [@12]. Patients with higher RTS scores among the severely injured patient may appear more stable despite trauma, potentially leading to delayed emergency procedures. In the subgroup analysis of patients who survived 30 days after injury, an association between increased RTS score and odds of OFI was not found. An explanation is that these survivors generally had better overall health conditions. Increased RTS-scores in a cohort of patients with better survival would not be associated with increased odds of OFI. 
+
+Prolonged stay in the ICU was found to be significantly associated with higher odds of OFI in both the unadjusted and adjusted analyses. There are two things to consider regarding this variable. Firstly, patients requiring extended ICU care are often those with complex medical conditions, severe injuries, or critical illness. As a result, their prolonged stay in the ICU may signify a higher baseline risk for experiencing complications, increasing odds of OFI. Additionally, prolonged ICU stay increases likelihood of medical errors and adverse events to occur. The ICU environment, while designed to provide advanced medical care, can also be fraught with complexities, including high patient acuity, numerous interventions, and a fast-paced workflow. The longer a patient remains in the ICU, the greater the cumulative exposure to potential errors. Moreover, the prolonged duration of critical illness may lead to complications further increasing the odds of OFI.  Conversely, shorter ICU stays may indicate patient demise before potential mistakes could occur, particularly in cases where mortality was anticipated rather than preventable. This finding is similar to previous research demonstrating prolonged ICU stays as a risk factor for increased mortality and morbidity in trauma patients [@22, @26]. Furthermore, it also corresponds with a retrospective cohort indicating that lower initial illness severity and younger age are associated with earlier discharge, further supporting the link between higher odds of OFI and prolonged ICU stays [@25]. In the subgroup analysis of patients alive 30 days after injury, the results could not be replicated. This discrepancy might be attributed to the fact that patients who had longer ICU stays and also passed away belonged to the group with more severe conditions, thus predisposing them to more errors and consequently increasing the odds of OFI. In summary, the association between prolonged ICU stays and OFI is multifactorial, encompassing patient acuity, complexity of care, risk of medical errors, and long-term sequelae of critical illness. 
+
+The reason for prolonged ICU stays being associated with increased mortality has been investigated by previous studies suggesting that factors such as comorbidities, age, and illness severity upon admission do not fully elucidate the increased long-term mortality observed in this patient cohort. As the duration of ICU stay increases, the primary reason for ICU stay becomes less linked to the patient’s original condition and increasingly tied to persistent chronic illness accompanied by subsequent organ dysfunction. The cause of the organ dysfunction comes from increased exposure to iatrogenous factors and nosocomial infections, which exacerbate pre-existing organ dysfunction or lead to new-onset organ dysfunctions. [@23, @24] Consequently, this might be a potential explanation for the nonsignificance of predictors such as ASA preinjury and ISS in the analyses. These predictors primarily reflect the patient's baseline health status and the initial injury severity, whereas the complications that arise during prolonged ICU stays are more closely associated with the ongoing healthcare interventions and exposures experienced during hospitalization which cannot be measured with ASA preinjury and ISS.
+
+Another factor associated with increased odds of OFI was survival 30 days after injury. Previous research has identified an association between increased mortality and the severity of the injury upon admission [@59], suggesting that patients at high risk of 30-day mortality are typically in poor health upon arrival. Consequently, the likelihood of OFI decreases as deaths may not be preventable. Therefore, survival to 30 days after the injury is associated with increased odds of OFI.
+
+We also found that mechanical ventilation more than seven days was significantly associated with increased odds of OFI. Previous research has shown that prolonged mechanical ventilation is associated with increased mortality. This is because mechanical ventilation is associated with severe complications and failure of weaning further increases length of mechanical ventilation as well as ICU length of stay [@65, @66]. Our finding of this association may be because of the increased rate of complications and mortality associated with prolonged mechanical ventilation.
+
+Our findings imply that patients were not subjected to differential treatment based on age or sex. This is corroborated by a study indicating that physicians’ willingness to admit patients to the ICU remains consistent regardless of whether the case describes a man or a woman [@29]. However, other research reveals nuances in the relationship between sex and patient outcomes. For instance, among severely injured patients aged 16-44 years, female sex is associated with lower in-hospital mortality rates. Female sex is also associated with a decreased likelihood of ICU admission [@30]. Conversely, male sex is associated with worse outcomes in postoperative ICU patients, with male patients consuming two-thirds of ICU resources [@31]. The higher rate of male ICU admissions and their association with adverse outcomes may be influenced by factors unrelated to the odds of OFI. 
+
+The preinjury ASA score was initially designed to evaluate a patient's health status pre-surgery, offering insights into the risk of postoperative complications, and has been found to be a reliable score for predicting mortality after trauma, predicting readmission after traumatic injury, and classifying comorbidity [@32, @33, @34]. As highlighted earlier, prolonged ICU stay becomes decreasingly associated with a patient’s initial condition, supporting the lack of association between OFI and preinjury ASA score. Moreover, the ASA score paints a pre-trauma health picture contrasting with injury scores like RTS, which may offer a more precise assessment of the current condition. 
+
+The lack of significance in on-call hours in both analyses suggests that patient’s arrival times did not influence their medical care, indicating that increasing medical resources outside regular working hours may not effectively reduce OFIs. This finding aligns with research on surgeons’ performance after night shifts, which found similar risks of adverse outcomes regardless of prior night work [@51]. 
+
+Similarly, the lack of significance of ISS in either analysis is consistent with studies suggesting that ISS has higher predictive value when combined with other parameters such as vital signs, comorbidities, and mechanism of injury. Our findings are further supported by research indicating that physiological models outperform anatomical models among ICU-admitted patients, with RTS being a physiological model and ISS being an anatomical one [@36]. Moreover, the New Injury Severity Score (NISS) has also been shown to be a superior predictor for ICU admission and prolonged ICU stay compared to ISS [@37], possibly explaining the nonsignificance of ISS in our analysis.
+
+### Strengths and limitations
+
+One of the strengths of this study is its reliance on registry-based data, ensuring a high level of data quality and reliability. The use of pre-defined variables standardized their definitions, enhancing the potential for similar studies to replicate these findings. Additionally, the study’s specific inclusion criteria facilitated the formation of a well-defined cohort, further contributing to the reliability and reproducibility of the study.
+
+However, several limitations need to be acknowledged. Firstly, the study size was limited. This was a single-center study and provided insights primarily into the context of the Karolinska Institute Hospital Solna. Consequently, the generalizability of the findings to other level 1 trauma centers and ICUs may be limited. Moreover, the small cohort size could potentially impact result accuracy.
+
+Another limitation is the selection of patients for the morbidity and mortality review, which heavily relied on the local audit filters used at the Karolinska Institute Hospital Solna. The use of audit filters for patient selection for the mortality and morbidity review is associated with high false positive rates, ranging from 24% to 80% [@38]. Even though the use of audit filters is associated with high false positive rates, there is still a risk of misplacement where some patients with OFI may have been overlooked. 
+
+Additionally, the handling of the variables to the RTS score – namely, RR, SBP, and GCS – introduced potential sources of variability. The use of prehospital, emergency department, or intubation-based values for these variables may have affected data accuracy and reproducibility. However, the composite nature of the RTS score mitigates some of these concerns, as it provides a comprehensive assessment of the patient’s physiological status. 
+
+### Clinical implications
+
+This study may hold potential for clinical implications, particularly considering trauma as a leading cause of death globally. While further research is needed to fully understand the clinical implications of our findings, our study contributes to the ongoing efforts to improve trauma care quality. 
+
+By identifying OFIs among trauma patients admitted to the ICU, our study offers valuable insights into areas where interventions can be targeted to improve patient outcomes. Specifically, our findings suggest that patients with higher RTS scores, prolonged stays in the ICU, and who were alive 30 days after injury are at increased odds of OFIs. This highlights the importance of prioritizing these patients for closer monitoring and implementing targeted interventions to prevent errors in care. 
+
+Furthermore, our research provides valuable information about the patient demographics of the trauma center at Karolinska University Hospital in Solna. This understanding of patient characteristics can inform the development of tailored care plans and quality improvement initiatives aimed at optimizing trauma care delivery.
+
+In summary, our study underscores the importance of continuous efforts to refine trauma care practices and prioritize patient safety. By addressing OFIs and tailoring interventions to high-risk patients, healthcare providers can strive to improve outcomes and enhance the quality of trauma care on a global scale.
 
 
+#### Health equity
 
-Discussion
-==========
+In the context of trauma studies, much of the comparative research on OFI among trauma patients is registry-based and encompass all trauma admissions to a hospital regardless of age, sex, or sociodemographic factors. 
 
-<!--
+Our study focused specifically on trauma patients admitted to the ICU at the Karolinska University Hospital Solna, including all patients with severe trauma in the Stockholm region. However, it’s important to note that the population of Stockholm may not be representative of Sweden as a whole. Karolinska University Hospital Solna is a specialized hospital, and access to similar high-quality care may not be uniform across other regions in the country. Therefore, the findings of our study may be more applicable to the population of Stockholm, rather than ICU settings in other parts of Sweden. This could potentially limit the generalizability of our results.  
 
-Key results
------------
-Summarise key results with reference to study objectives
+Furthermore, our study observed a predominance of males among the included patients. However, it’s essential to clarify that this imbalance is not a result of biased demographic selection. Instead, it likely reflects the higher incidence of males being admitted to the ICU and experiencing trauma, as indicated by the registry-based nature of our study. 
 
-Limitations
------------
+### Generalizability
 
-Discuss limitations of the study, taking into account sources of
-potential bias or imprecision.  Discuss both direction and magnitude
-of any potential bias
+The study was conducted on 143 outcomes of OFI. The limited number of outcomes can be attributed to several inclusion criteria: the study focused on a single-center cohort, specifically targeting patients admitted to the ICU who were over 14 years old, not deceased upon arrival, and had recorded data on the presence or absence of OFI. While this approach ensured high internal validity by defining a clear and specific cohort of ICU-admitted trauma patients at Karolinska University Hospital Solna, it also led to compromised external validity due to the study’s restricted scope and sample size. 
 
-Interpretation
---------------
-
-Give a cautious overall interpretation of results considering
-objectives, limitations, multiplicity of analyses, results from
-similar studies, and other relevant evidence
-
-Generalisability
-----------------
-
-Discuss the generalisability (external validity) of the study results
-
--->
+Despite the limitations in external validity, the findings of this study hold significant relevance for directing future efforts in trauma improvement within the ICU of this hospital. Additionally, by concentrating on a well-defined patient cohort, this research provides valuable insights into areas where targeted interventions may be most beneficial for enhancing trauma care outcomes.
 
 
+### Future studies
 
+Further research on OFI among ICU-admitted patients is needed to expand our understanding of this aspect of trauma care. The primary limitation of this study was its restricted sample size, highlighting the need for larger-scale investigations. Conducting multi-center studies encompassing extensive databases or merging multiple datasets could provide more comprehensive insights into OFI and contribute to enhancing TQIPs. However, it is important to acknowledge that multi-center studies may compromise internal validity, reducing their applicability to specific centers. 
 
+Building upon the findings of this study, future research should focus on specific variables such as ICU length of stay and the individual assessment of vital parameters like GCS, RR, and SBP, rather than relying solely on composite scores like RTS. Analyzing these vital signs separately may reveal which parameter holds greater predictive value for OFI. 
 
-Conclusion
-==========
+Given the significant association between higher RTS scores and increased odds of OFI, attention should be directed towards trauma patients who appear stable upon admission but may deteriorate over time. Future research should aim to identify early indicators of worsening conditions in these patients, facilitating more targeted resource allocation and intervention strategies.
 
-<!-- Give a short conclusion, corresponding to the aim -->
+In contrast, ISS did not demonstrate a correlation with OFI in this study. Subsequent studies could explore alternative scoring systems such as NISS, RTS, and ASA scores, or combinations of physiological and anatomical scoring systems to determine the most effective predictor of OFI in trauma patients. 
 
+Overall, future research endeavors should strive to address these gaps in knowledge to optimize trauma care outcomes and contribute to the ongoing improvement of trauma quality improvement initiatives. -Also, qualitative studies could provide an in-depth understanding of why physiologically more stable patients are more likely to have OFIs.-
 
+# Conclusion
 
+This study aimed to characterize the association between OFI and patient and process factors among adult patients admitted to the ICU at the Karolinska Institute Hospital Solna. The findings revealed a significant association between higher RTS scores, ICU stay exceeding 7 days in, and survival 30 days after injury with increased odds of OFI. These results suggest that efforts to enhance trauma care should particularly focus on patients initially presenting in relatively stable conditions and those with prolonged ICU stays. 
 
-References
-==========
+# Contributions
+
+This study has been conducted with continuous guidance and feedback from Martin Gerdin Wärnberg, Jonatan Attergrim, and Kelvin Szolnoky.
+
+# Acknowledgements
+
+I want to extend my greatest gratitude to my supervisor Martin Gerdin Wärnberg and co-supervisors Jonatan Attergrim and Kelvin Szolnoky who have provided me with guidance and support throughout this semester. Their extensive knowledge, deep insight into the subject, and availability and support have greatly contributed to the development of this project. Additionally, I want to express my gratitude to my friends and family who have been there contributing with encouragement and positive energy.
+
+# References
 
 <!-- Do not edit by hand, references will be inserted and formatted automatically once you knit this document -->

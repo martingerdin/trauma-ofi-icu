@@ -16,6 +16,7 @@ library(dplyr)
 #install.packages("gtsummary")
 library(gtsummary)
 library(tidyverse)
+library(officer)
 
 
 #FLOWCHART: included/excluded
@@ -26,69 +27,6 @@ library(glue)
 library(htmlTable)
 library(grid)
 library(magrittr)
-
-org_cohort <- boxGrob(glue("Total patient cases in trauma quality database",
-                           "n = {pop}",
-                           pop = txtInt(14022),
-                           .sep = "\n"))
-eligible <- boxGrob(glue("Eligible",
-                         "n = {pop}",
-                         pop = txtInt(1742),
-                         .sep = "\n"))
-included <- boxGrob(glue("Included (n = {incl}):",
-                          "- OFI: {ofi1}",
-                          "- No OFI: {ofi2}",
-                          ofi1 = 143,
-                          ofi2 = 1306,
-                         incl = txtInt(1449),
-                         .sep = "\n"),
-                    just = "left")
-excluded <- boxGrob(glue("Excluded (n = {tot}):",
-                         " - Not admitted to the ICU: {icu}",
-                         " - Patients < 15 years: {age}",
-                         " - Dead on arrival: {doa}",
-                         " - No data on OFI: {ofi}",
-                         tot = 12278,
-                         icu = 14022-2679,
-                         age = 2679-2676,
-                         doa = 2676-2670,
-                         ofi = 2670-1742,
-                         .sep = "\n"),
-                    just = "left")
-excluded1 <- boxGrob(glue("Excluded: missing data (n = {x})",
-                          x = 1742 - 1449,
-                          .sep = "\n"),
-                     just = "left")
-
-grid.newpage()
-vert <- spreadVertical(org_cohort,
-                       eligible = eligible,
-                       included = included)
-
-# Move excluded box
-excluded <- moveBox(excluded,
-                    x = 0.8,
-                    y = 0.7)
-
-excluded1 <- moveBox(excluded1,
-                     x = 0.8,
-                     y = 0.4)
-
-# Connect boxes vertically
-for (i in 1:(length(vert) - 1)) {
-  connectGrob(vert[[i]], vert[[i + 1]], type = "vert") %>%
-    print
-}
-
-# Connect excluded box horizontally
-connectGrob(vert$eligible, excluded, type = "L")
-connectGrob(vert$included, excluded1, type = "L")
-
-# Print boxes
-vert
-excluded
-excluded1
-
 
 ##CLEANING DATA
 subdat <- merged.data %>%
@@ -132,9 +70,9 @@ ofi$Intubation1 <- ifelse(ofi$pre_intubated == 1, "Intubation",
 
 #Intubation combined with ventilator days 
 ofi$Intubation <- ifelse(ofi$Intubation1 == "No intubation", "No intubation",
-                         ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days ==  0, "Intubation 1-3 days",
-                                ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days %in% 1:7, "Intubation 1-7 days",
-                                       ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days > 7, "Intubation > 7 days", 
+                         ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days ==  0, "Mechnical ventilation 1-7 days",
+                                ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days %in% 1:7, "Mechanical ventilation 1-7 days",
+                                       ifelse(ofi$Intubation1 == "Intubation" & ofi$hosp_vent_days > 7, "Mechanical ventilation > 7 days", 
                                               ifelse(ofi$Intubation1 == "Unknown", "Unknown", NA)))))
 
 #Respiratory rate 
@@ -178,15 +116,15 @@ ofi$RTSSBP <- ifelse(ofi$SystolicBloodPressure > 89, 4,
                                           ifelse(ofi$SystolicBloodPressure == 0, 0,
                                                  ifelse(ofi$SystolicBloodPressure == 99, 0, NA))))))
 
-ofi$RTSRR <- ifelse(ofi$RespiratoryRate > 29, 4,
-                    ifelse(ofi$RespiratoryRate %in% 10:29, 3,
+ofi$RTSRR <- ifelse(ofi$RespiratoryRate %in% 10:29, 4,
+                    ifelse(ofi$RespiratoryRate >29, 3,
                            ifelse(ofi$RespiratoryRate %in% 6:9, 2,
                                   ifelse(ofi$RespiratoryRate %in% 1:5, 1,
                                          ifelse(ofi$RespiratoryRate == 0, 0,
                                                 ifelse(ofi$RespiratoryRate == 99, 0, NA)))))) 
 
 ofi$RTS <- (0.9368*ofi$RTSGCS + 0.7326*ofi$RTSSBP + 0.2908*ofi$RTSRR)
-
+#ofi$RTS <- (ofi$RTSGCS + ofi$RTSSBP + ofi$RTSRR)
 
 
 
@@ -215,7 +153,7 @@ ofi$daysinICU <- ifelse(ofi$iva_dagar_n < 7 | ofi$iva_dagar_n == 7, "≤ 7 days"
 
 #Pt ASA preinjury
 ofi$ASApreinjury <- ifelse(ofi$pt_asa_preinjury == 1 | ofi$pt_asa_preinjury == 2, "ASA 1-2",
-                           ifelse(ofi$pt_asa_preinjury %in% 3:7, "ASA 3-7",
+                           ifelse(ofi$pt_asa_preinjury %in% 3:6, "ASA 3-6",
                                   ifelse(ofi$pt_asa_preinjury == 999, NA, NA)))
 
 #Survival after 30 days 
@@ -235,6 +173,8 @@ ofi$OpportunityForImprovement1 <- ifelse(ofi$OpportunityForImprovement == "Oppor
 #Creating new table with defined data 
 library(dplyr)
 library(gt)
+#install.packages("flextable")
+library(flextable)
 
 table1 <- ofi %>% 
   select(Sex, Age, Intubation, RTS, ISS, TimeFCT, OnDuty, daysinICU, 
@@ -245,14 +185,15 @@ table1$Intubation <- ifelse(is.na(table1$Intubation), "Unknown", table1$Intubati
 table1 <- na.omit(table1)
 
 table2 <- table1 %>%
-  mutate(Intubation = factor(Intubation, levels = c("No intubation", "Intubation 1-7 days", "Intubation > 7 days", "Unknown"))) %>%
+  mutate(Intubation = factor(Intubation, levels = c("No intubation", "Mechanical ventilation 1-7 days", "Mechanical ventilation > 7 days", "Unknown"))) %>%
   tbl_summary(by = OpportunityForImprovement,
               type = list(OnDuty ~ "dichotomous"),
               label = list(RTS = "Revised Trauma Score",
                            ISS = "Injury Severity Score",
+                           Intubation = "Mechanical ventilation",
                            TimeFCT = "Time to first CT", 
                            daysinICU = "Days in the ICU",
-                           OnDuty = "On duty",
+                           OnDuty = "On call hours",
                            ASApreinjury = "ASA preinjury"),
               statistic = list(
                 all_continuous() ~ "{mean} ({sd})",
@@ -260,64 +201,17 @@ table2 <- table1 %>%
               ),
               missing = "ifany",
               missing_text = "Missing",
-              digits = all_continuous() ~ 2
+              digits = all_continuous() ~ 0
   )  %>%
   modify_table_styling(
     columns = label,
-    rows = label == "On duty",
+    rows = label == "On call hours",
     footnote = "Arrival at the hospital on Saturday or Sunday, or arrival at the hospital before 8 am or after 5 pm"
   ) %>%
   bold_labels() %>% 
   add_overall(last = TRUE) %>% 
+  add_p() %>%
+  bold_p(t=0.05) %>%
   modify_caption("<div style='text-align: left; font-weight: bold; color: black'>Table 1. Sample Characteristics</div>") %>% 
+ # as_flex_table() %>%
   print()
-
-#TABLE 2: Adjusted and unadjusted logistic regression
-# Data Preparation
-tablereg <- ofi %>% 
-  select(Sex, Age, Intubation, RTS, ISS,TimeFCT, OnDuty, daysinICU, TimeFCT, 
-         ASApreinjury, Survival, OpportunityForImprovement1)
-
-tablereg$Intubation <- ifelse(is.na(tablereg$Intubation), "Unknown", table1$Intubation)
-tablereg$Intubation <- fct_relevel(tablereg$Intubation, "No intubation", "Intubation 1-7 days", "Intubation > 7 days", "Unknown")
-
-
-# Unadjusted Table
-table3a <- tbl_uvregression(data = tablereg,
-                            method = glm,
-                            y = OpportunityForImprovement1,
-                            method.args = list(family = binomial),
-                            label = list(
-                              RTS = "Revised Trauma Score",
-                              daysinICU = "Days in the ICU",
-                              TimeFInt = "Time to first intervention",
-                              ASApreinjury = "ASA preinjury",
-                              OnDuty = "On duty",
-                              TimeFCT = "Time to first CT"
-                            )) %>%
-  bold_labels() %>%
-  bold_p(t = 0.05) 
-
-#print(table3a)
-
-# Adjusted Table
-#Creating linear regression 
-adjusted_table <- glm(OpportunityForImprovement1 ~ Sex + Age + Intubation + RTS +  ISS + OnDuty + daysinICU + TimeFCT + ASApreinjury + Survival, family = binomial, data = tablereg) 
-
-table3b <- tbl_regression(adjusted_table,
-                          label = list(RTS = "Revised Trauma Score",
-                                       daysinICU = "Days in the ICU",
-                                       ASApreinjury = "ASA preinjury",
-                                       TimeFCT = "Time to first CT")) %>%
-  bold_labels() %>%
-  bold_p(t = 0.05)
-
-# print(table3b)
-
-# Merging Tables
-table3_merge <- tbl_merge(tbls = list(table3a, table3b),
-                          tab_spanner = c("**Unadjusted**", "**Adjusted**")) %>%
-  modify_caption("<div style='text-align: left; font-weight: bold; color: black'>Table 2. Unadjusted and adjusted logistic regression analyses of associations between patient level factors and opportunities for improvement</div>")
-
-print(table3_merge)
-
